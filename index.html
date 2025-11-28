@@ -4,42 +4,148 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>北交所打新对资金面的影响及融资策略</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.8; margin: 40px; max-width: 900px; margin-left: auto; margin-right: auto; color: #333; }
-        h1, h2, h3, h4 { color: #1a1a1a; margin-top: 30px; }
-        h1 { font-size: 28px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        h2 { font-size: 22px; color: #0056b3; }
-        p { margin-bottom: 15px; }
-        .abstract { background: #f9f9f9; padding: 20px; border-left: 5px solid #007bff; margin-bottom: 25px; }
-        .metadata { font-size: 14px; color: #666; margin-bottom: 20px; }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 14px; }
-        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        .image-container { text-align: center; margin: 20px 0; border: 1px dashed #ccc; padding: 10px; }
-        .image-container img { max-width: 100%; height: auto; }
-        .formula { overflow-x: auto; padding: 10px 0; }
+        body {
+            font-family: "Microsoft YaHei", "SimSun", serif; /* 更接近中文 Word 的字体设置 */
+            line-height: 1.6;
+            margin: 40px auto;
+            max-width: 800px;
+            color: #000;
+            padding: 20px;
+            background-color: #fff;
+        }
+        
+        /* 标题样式还原 */
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+            border: none;
+            color: #000;
+        }
+        
+        .subtitle {
+            font-size: 14px;
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #000;
+            border-left: 4px solid #4472C4; /* 模拟 Word 常见样式的强调 */
+            padding-left: 10px;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 12px;
+            text-align: justify;
+            text-indent: 2em; /* 首行缩进，符合中文文档习惯 */
+        }
+
+        /* 摘要部分 */
+        .abstract {
+            font-family: "KaiTi", serif; /* 摘要常用楷体 */
+            background: #f5f5f5;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+            text-indent: 0;
+        }
+        .abstract strong {
+            font-weight: bold;
+        }
+
+        /* 表格样式优化 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            border: 1px solid #000;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #E7E6E6; /* Word 表格常见的灰色表头 */
+            font-weight: bold;
+        }
+        
+        /* 图片容器 */
+        .image-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            border: 1px solid #eee;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+        .caption {
+            font-size: 12px;
+            color: #666;
+            margin-top: 8px;
+            font-weight: bold;
+        }
+
+        /* 公式容器 */
+        .formula-container {
+            background-color: #fff;
+            padding: 10px;
+            margin: 15px 0;
+            text-align: center;
+            overflow-x: auto;
+        }
+        
+        /* 脚注/元数据 */
+        .footer {
+            margin-top: 50px;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
-    <div class="metadata">交易所质押式回购研究报告(五) | 2025.10.23</div>
-    
-    <h1>北交所打新对资金面的影响及融资策略 </h1>
+    <h1>北交所打新对资金面的影响及融资策略</h1>
+    <div class="subtitle">交易所质押式回购研究报告（五）| 2025.10.23</div>
     
     <div class="abstract">
-        **概述** [cite: 549]: 本报告对北交所打新过程及其对资金市场的影响进行系统分析，内容包括打新现状、对交易所回购价格的扰动机理、打新收益的实证分析，以及回购品种的优化融资策略。 [cite: 552]
+        <strong>概述：</strong>本报告从四个方面对北交所打新过程及其对资金市场的影响进行系统分析。首先，介绍当前北交所打新的整体现状，包括发行规模扩张、投资者参与热度以及资金冻结周期等关键特征。其次，探讨打新活动对交易所回购价格的扰动机理，重点分析GC001与GC007等不同期限品种在申购缴款期内的利率表现及流动性传导。第三部分对北交所打新的收益水平进行实证分析，通过典型案例展示收益测算逻辑，揭示中签率下降与首日涨幅收敛的双重趋势，并指出理想化计算与现实收益之间的差异。最后，结合实际交易数据，比较不同期限回购品种在覆盖与未覆盖缴款日情况下的加权节约率，提出在缴款窗口期内以GC002跨期融资、窗口外以GC001滚动操作的优化策略。
     </div>
 
-    <h2>一、北交所打新现状 [cite: 554]</h2>
-    <p>从2024年9月行情以来，北交所新股发行与投资者参与度明显提升，网上申购的冻结规模从此前近千亿量级迅速抬升至接近万亿元 [cite: 555]。北交所申购机制沿用“申购即缴款、T+2公布并解冻未中签资金、上市后自由流通”的流程安排 [cite: 555]。由此形成了以T日至T+2日为核心的资金占用窗口 [cite: 556]。</p>
+    <h2>一、北交所打新现状</h2>
+    <p>从2024年9月行情以来，北交所新股发行与投资者参与度明显提升，网上申购的冻结规模从此前的近千亿量级迅速抬升至接近万亿元，市场热度在个别批次尤为突出。北交所申购机制沿用“申购即缴款、T+2公布并解冻未中签资金、上市后自由流通”的流程安排，由此在时间序列上形成了以T日至T+2日为核心的资金占用窗口。该窗口决定了交易所端短端资金的阶段性紧张与随后的快速回落，也使得“是否覆盖缴款期”成为后续融资策略选择的分水岭。</p>
 
     <div class="image-container">
-        <h3>图1: 北交所新股打新月度平均冻结资金快速攀升(亿元) [cite: 559]</h3>
         <img src="图1-冻结资金.png" alt="图1: 北交所新股打新月度平均冻结资金快速攀升">
-        <p><strong>注意：</strong> 请将原报告中的图 1 截图，并保存为 **图1-冻结资金.png** 放置在当前文件夹中。</p>
+        <div class="caption">图 1：北交所新股打新月度平均冻结资金快速攀升（亿元）</div>
     </div>
 
-    <h3>表1: 北交所网上打新时间表 [cite: 597]</h3>
+    <h3>表1：北交所网上打新时间表</h3>
     <table>
         <thead>
             <tr>
@@ -51,67 +157,65 @@
         </thead>
         <tbody>
             <tr>
-                <td>T日(网上申购缴款日)</td>
+                <td>T日<br>（网上申购缴款日）</td>
                 <td>投资者完成网上申购并全额缴款</td>
                 <td>资金冻结</td>
-                <td>投资者申购需全额缴款,资金在账户中冻结,不可动用 [cite: 598]</td>
+                <td>投资者申购需全额缴款，资金在账户中冻结，不可动用</td>
             </tr>
             <tr>
-                <td>T+2日(公布中签结果)</td>
-                <td>公布中签结果,未中签资金解冻</td>
+                <td>T+2日<br>（公布中签结果）</td>
+                <td>公布中签结果，未中签资金解冻</td>
                 <td>部分资金解冻</td>
-                <td>未中签部分资金自动解冻返还账户,中签部分资金继续冻结直至股票上市 [cite: 598]</td>
+                <td>未中签部分资金自动解冻返还账户，中签部分资金继续冻结直至股票上市</td>
             </tr>
             <tr>
-                <td>T+3日-T+5日</td>
+                <td>T+3日 – T+5日</td>
                 <td>股票登记及上市准备</td>
                 <td>中签资金冻结</td>
-                <td>完成股份登记、交收及上市前准备,中签资金仍冻结状态 [cite: 598]</td>
+                <td>完成股份登记、交收及上市前准备，中签资金仍冻结状态</td>
             </tr>
             <tr>
-                <td>上市日(T+X)</td>
+                <td>上市日（T+X）</td>
                 <td>股票正式上市交易</td>
                 <td>资金全部解冻</td>
-                <td>中签股票到账,可自由交易 [cite: 598]</td>
+                <td>中签股票到账，可自由交易</td>
             </tr>
         </tbody>
     </table>
+    <p style="font-size: 12px; color: #666; text-indent: 0;">注：上述时间表为一般情形，具体节奏可能因个股发行安排、节假日顺延或交易所公告调整而有所不同。<br>数据来源：北交所，招银理财</p>
 
-    <h2>二、对回购价格的扰动 [cite: 600]</h2>
-    <p>交易所回购品种的价格走势呈现出明显的阶段性差异 [cite: 601]。GC001在T-1日价格约为1.64%，申购缴款日（T日）上升至1.82%，T+1维持高位 (1.82%)，随后在解冻日快速回落至约1.56% [cite: 602, 603]。资金冻结期内的利率抬升幅度约为 +18bp [cite: 604]，显示出典型的“脉冲式上行——快速回落”特征 [cite: 603]。</p>
-    <p>相对而言，GC007的利率变动更为平缓 [cite: 606]。T-2至T日利率从1.71%逐步上行至1.79%，T+1触顶至1.82%，但整体涨幅仅约10bp [cite: 606, 607]，解冻日与T+3仍维持在1.75%-1.78%区间，未出现明显回落 [cite: 607]。这说明资金紧张的冲击被更长久期的期限结构所平滑 [cite: 608]。</p>
-    <p>综合比较可见，短端GC001的波动显著大于中期GC007，资金紧张主要集中在T日至T+1的短时窗口 [cite: 660]。跨市场观察表明，银行间端的DR001与DR007并未出现同步上行，说明此次扰动主要局限于交易所体系内部 [cite: 661]。</p>
+    <h2>二、对回购价格的扰动</h2>
+    <p>围绕T日至T+2日的资金冻结与解冻节律，交易所回购品种的价格走势呈现出明显的阶段性差异。根据均值来看，GC001在T-1日价格约为1.64%，申购缴款日上升至1.82%，T+1维持高位（1.82%），随后在解冻日快速回落至约1.56%，T+3稳定在1.59%左右，显示出典型的“脉冲式上行—快速回落”特征。资金冻结期内的利率抬升幅度约为+18bp，解冻后迅速回吐全部涨幅，印证了短端流动性在申购缴款窗口的阶段性紧张与释放。</p>
+    <p>相对而言，GC007的利率变动更为平缓。T-2至T日利率从1.71%逐步上行至1.79%，T+1触顶至1.82%，但整体涨幅仅约10bp，解冻日与T+3仍维持在1.75%–1.78%区间，未出现明显回落。说明在跨周周期内，资金紧张的冲击被更长久期的期限结构所平滑，市场更多通过配置结构调节而非价格快速调整来吸收冲击。</p>
 
     <div class="image-container">
-        <h3>图2: 三季度以来GC001变动情况 (网上申购缴款日为T) [cite: 611]</h3>
         <img src="图2-GC001变动.png" alt="图2: GC001变动情况">
-        <p><strong>注意：</strong> 请将原报告中的图 2 截图，并保存为 **图2-GC001变动.png** 放置在当前文件夹中。</p>
+        <div class="caption">图 2：三季度以来GC001变动情况</div>
     </div>
     <div class="image-container">
-        <h3>图3: 三季度以来GC007变动情况 (网上申购缴款日为T) [cite: 638]</h3>
         <img src="图3-GC007变动.png" alt="图3: GC007变动情况">
-        <p><strong>注意：</strong> 请将原报告中的图 3 截图，并保存为 **图3-GC007变动.png** 放置在当前文件夹中。</p>
+        <div class="caption">图 3：三季度以来GC007变动情况</div>
     </div>
+    
+    <p>综合比较可见，短端GC001的波动显著大于中期GC007，资金紧张主要集中在T日至T+1的短时窗口，体现出北交所打新活动对交易所短端流动性的强扰动特征；而GC007等中长期限的波动相对有限，资金面总体稳定。跨市场观察同样表明，银行间端的DR001与DR007并未出现同步上行，说明此次扰动主要局限于交易所体系内部，未形成广谱性的流动性收缩。</p>
+    
     <div class="image-container">
-        <h3>图4: 银行间资金利率价格波动振幅偏小，且相关性不明显 [cite: 663]</h3>
         <img src="图4-银行间利率.png" alt="图4: 银行间资金利率价格波动振幅">
-        <p><strong>注意：</strong> 请将原报告中的图 4 截图，并保存为 **图4-银行间利率.png** 放置在当前文件夹中。</p>
+        <div class="caption">图 4：银行间资金利率价格波动振幅偏小，且相关性不明显</div>
     </div>
 
-    <h2>三、北交所打新收益分析 [cite: 677]</h2>
-    <p>当前中签率呈持续下降趋势，使得整体打新策略的收益水平逐渐趋向理性 [cite: 679, 680]。以长江能科 (920158.BJ) 为例，网上发行冻结资金高达7279亿元，中签率为0.0209% [cite: 681]。假设投资者以100万元资金参与申购，单笔申购的绝对收益约为495元，折算绝对收益率约为0.05%，年化收益率为9.03% [cite: 682, 683]。</p>
-    <p>北交所新股打新正在进入收益回归理性、竞争趋于饱和的阶段 [cite: 684]。收益的持续性更多取决于两方面：一是资金的实际占用效率 [cite: 685]，二是上市公司质地与行业预期等基本面因素 [cite: 686]。</p>
+    <h2>三、北交所打新收益分析</h2>
+    <p>当前市场最受关注的问题之一，是北交所打新收益的可持续性。虽然个股首日平均涨跌幅依旧维持在高位，部分标的的平均涨幅仍达到约364%，但与此同时，中签率却呈持续下降趋势。近期“熊之光”的网上申购中签率更是创下仅0.0179%的新低。这种“收益高但命中难”的现象，使得整体打新策略的收益水平逐渐趋向理性。</p>
+    <p>为了更直观地说明打新收益的实际表现，我们以投资者使用100万元资金参与申购为例，结合资金冻结成本进行测算。以2025年10月16日上市的长江能科（920158.BJ）为例，该公司所属石油石化行业，网上发行冻结资金高达7279亿元，显示市场参与热度依旧不减。本次网上申购中签率为0.0209%，首日涨跌幅折算收益为0.0587%。假设投资者以100万元资金参与申购：未中签部分资金在两天后解冻，对应资金占用成本约92元；中签资金从9月24日起冻结至10月16日上市（实际占用22天），资金成本约0.18元；中签后首日浮盈约587元。综合计算，单笔申购的绝对收益约为495元，折算绝对收益率约为0.05%，若按等效资金占用量计算，其年化收益率为9.03%。</p>
 
-    <h3>等效资金占用量计算公式 [cite: 687]</h3>
-    <div class="formula">
+    <div class="formula-container">
         $$ \text{等效资金占用量} = \text{申购资金} \times [(1-\text{中签率}) \times \text{冻结天数} + \text{中签率} \times \text{冻结天数}_{2}] + \text{持有天数} $$
-    </div>
-    <div class="formula">
-        $$ \text{等效资金占用年化收益率} = (\frac{\text{收益}}{\text{等效资金占用量}}) \times (\frac{365}{\text{持有天数}}) $$
+        $$ \text{等效资金占用年化收益率} = \left( \frac{\text{收益}}{\text{等效资金占用量}} \right) \times \left( \frac{365}{\text{持有天数}} \right) $$
     </div>
 
-    <h3>表2: 2024年10月以来北交所打新首日卖出收益 [cite: 688]</h3>
-    <p>（表格内容较长，这里仅展示部分行，完整表格已在您原文件中）</p>
+    <p>从下表可以看出，即便按等效资金占用量计算出的收益率仍然客观，整体收益已明显低于去年年末和今年年初高点。北交所新股打新正在进入收益回归理性、竞争趋于饱和的阶段。</p>
+
+    <h3>表2：2024年10月以来北交所打新首日卖出收益（部分）</h3>
     <table>
         <thead>
             <tr>
@@ -126,17 +230,15 @@
             <tr><td>长江能科</td><td>2025-10-16</td><td>0.05%</td><td>9.03%</td></tr>
             </tbody>
     </table>
+    
+    <p>需要强调的是，当前测算仍属于理想化场景，存在两个值得注意的修正点。首先，计算未考虑“碎股”配售的现实情况。其次，等效资金占用年化收益率虽然看似较高，但北交所并非每日均有可参与的新股，因此等效年化仅具参考意义。</p>
 
-    <h2>四、合理的回购错期融资方式 [cite: 694]</h2>
-    <p>融资侧的核心在于**“是否需要跨越缴款窗口”** [cite: 695]。以GC001连续滚动覆盖冻结期作为基准方案，其优势是灵活、贴近短端真实价格 [cite: 695]。但在T日至T+1的脉冲期，滚动方案暴露在最昂贵的隔夜上升段 [cite: 695]。</p>
-    <p>在**不覆盖缴款日**时，GC001滚动融资更便宜 [cite: 697]。然而当**覆盖缴款期**时，**GC002**的加权节约率转负，说明以GC002“一次性跨期”能显著压低综合成本 [cite: 698]。</p>
-    <p>因此，优化策略为：**窗口内优先GC002跨期、窗口外回归GC001滚动** [cite: 699]。</p>
-    <ul>
-        <li>**窗口内：** 在T-1至T+2的关键区间提前锁定GC002额度，利用其在窗口期的相对定价优势平抑脉冲 [cite: 699]。</li>
-        <li>**窗口外：** 回到GC001以恢复灵活度并减少久期暴露 [cite: 699]。</li>
-    </ul>
+    <h2>四、合理的回购错期融资方式</h2>
+    <p>融资侧的核心在于“是否需要跨越缴款窗口”。若以GC001连续滚动覆盖冻结期作为基准方案，其优势在于灵活、贴近短端真实价格、便于在窗口外快速回落至低成本区间；但一旦面临T日至T+1的脉冲，滚动方案往往被动暴露在最昂贵的隔夜上升段。</p>
+    <p>以与原始口径一致的加权节约率指标进行横向比较可以看到，在不覆盖缴款日时，GC002、GC003、GC004与GC007相对于GC001多为“正值”，即GC001滚动更便宜；然而当覆盖缴款期时，GC002的加权节约率转负，说明在关键窗口以GC002“一次性跨期”能显著压低综合成本。</p>
+    <p>基于此，可将执行框架设置为“<strong>窗口内优先GC002跨期、窗口外回归GC001滚动</strong>”的组合路径。为确保可落地性，还需做好期限匹配、交易摩擦统筹及程序化预案。</p>
 
-    <h3>表3: GC001与其他回购在是否覆盖缴款日时的融资成本对比 [cite: 702]</h3>
+    <h3>表3：GC001与其他回购在是否覆盖缴款日时的融资成本对比</h3>
     <table>
         <thead>
             <tr>
@@ -152,13 +254,14 @@
             <tr><td>GC007</td><td>+5.88%</td><td>+5.92%</td></tr>
         </tbody>
     </table>
-    <p class="metadata">注: 为正数则说明 GC001滚动融资更便宜 [cite: 704]</p>
-    
-    <hr>
-    
-    <footer>
-        <p class="metadata">数据来源: Wind, 招银理财 [cite: 570, 599, 658, 674, 690, 705]</p>
-    </footer>
+    <p style="font-size: 12px; color: #666; text-indent: 0;">注：为正数则说明GC001滚动融资更便宜<br>数据来源：Wind，招银理财</p>
+
+    <div class="footer">
+        <p>数据来源：Wind, 招银理财</p>
+        
+        <p style="margin-top: 5px; color: #ccc;">Copyright &copy; 2025 招银理财. All Rights Reserved.</p>
+        
+        </div>
 
 </body>
 </html>

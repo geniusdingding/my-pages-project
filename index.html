@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北交所打新对资金面的影响及融资策略</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.8; margin: 40px; max-width: 900px; margin-left: auto; margin-right: auto; color: #333; }
+        h1, h2, h3, h4 { color: #1a1a1a; margin-top: 30px; }
+        h1 { font-size: 28px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h2 { font-size: 22px; color: #0056b3; }
+        p { margin-bottom: 15px; }
+        .abstract { background: #f9f9f9; padding: 20px; border-left: 5px solid #007bff; margin-bottom: 25px; }
+        .metadata { font-size: 14px; color: #666; margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 14px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .image-container { text-align: center; margin: 20px 0; border: 1px dashed #ccc; padding: 10px; }
+        .image-container img { max-width: 100%; height: auto; }
+        .formula { overflow-x: auto; padding: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <div class="metadata">交易所质押式回购研究报告(五) | 2025.10.23</div>
+    
+    <h1>北交所打新对资金面的影响及融资策略 </h1>
+    
+    <div class="abstract">
+        **概述** [cite: 549]: 本报告对北交所打新过程及其对资金市场的影响进行系统分析，内容包括打新现状、对交易所回购价格的扰动机理、打新收益的实证分析，以及回购品种的优化融资策略。 [cite: 552]
+    </div>
+
+    <h2>一、北交所打新现状 [cite: 554]</h2>
+    <p>从2024年9月行情以来，北交所新股发行与投资者参与度明显提升，网上申购的冻结规模从此前近千亿量级迅速抬升至接近万亿元 [cite: 555]。北交所申购机制沿用“申购即缴款、T+2公布并解冻未中签资金、上市后自由流通”的流程安排 [cite: 555]。由此形成了以T日至T+2日为核心的资金占用窗口 [cite: 556]。</p>
+
+    <div class="image-container">
+        <h3>图1: 北交所新股打新月度平均冻结资金快速攀升(亿元) [cite: 559]</h3>
+        <img src="图1-冻结资金.png" alt="图1: 北交所新股打新月度平均冻结资金快速攀升">
+        <p><strong>注意：</strong> 请将原报告中的图 1 截图，并保存为 **图1-冻结资金.png** 放置在当前文件夹中。</p>
+    </div>
+
+    <h3>表1: 北交所网上打新时间表 [cite: 597]</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>阶段</th>
+                <th>主要环节</th>
+                <th>资金状态</th>
+                <th>说明</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>T日(网上申购缴款日)</td>
+                <td>投资者完成网上申购并全额缴款</td>
+                <td>资金冻结</td>
+                <td>投资者申购需全额缴款,资金在账户中冻结,不可动用 [cite: 598]</td>
+            </tr>
+            <tr>
+                <td>T+2日(公布中签结果)</td>
+                <td>公布中签结果,未中签资金解冻</td>
+                <td>部分资金解冻</td>
+                <td>未中签部分资金自动解冻返还账户,中签部分资金继续冻结直至股票上市 [cite: 598]</td>
+            </tr>
+            <tr>
+                <td>T+3日-T+5日</td>
+                <td>股票登记及上市准备</td>
+                <td>中签资金冻结</td>
+                <td>完成股份登记、交收及上市前准备,中签资金仍冻结状态 [cite: 598]</td>
+            </tr>
+            <tr>
+                <td>上市日(T+X)</td>
+                <td>股票正式上市交易</td>
+                <td>资金全部解冻</td>
+                <td>中签股票到账,可自由交易 [cite: 598]</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>二、对回购价格的扰动 [cite: 600]</h2>
+    <p>交易所回购品种的价格走势呈现出明显的阶段性差异 [cite: 601]。GC001在T-1日价格约为1.64%，申购缴款日（T日）上升至1.82%，T+1维持高位 (1.82%)，随后在解冻日快速回落至约1.56% [cite: 602, 603]。资金冻结期内的利率抬升幅度约为 +18bp [cite: 604]，显示出典型的“脉冲式上行——快速回落”特征 [cite: 603]。</p>
+    <p>相对而言，GC007的利率变动更为平缓 [cite: 606]。T-2至T日利率从1.71%逐步上行至1.79%，T+1触顶至1.82%，但整体涨幅仅约10bp [cite: 606, 607]，解冻日与T+3仍维持在1.75%-1.78%区间，未出现明显回落 [cite: 607]。这说明资金紧张的冲击被更长久期的期限结构所平滑 [cite: 608]。</p>
+    <p>综合比较可见，短端GC001的波动显著大于中期GC007，资金紧张主要集中在T日至T+1的短时窗口 [cite: 660]。跨市场观察表明，银行间端的DR001与DR007并未出现同步上行，说明此次扰动主要局限于交易所体系内部 [cite: 661]。</p>
+
+    <div class="image-container">
+        <h3>图2: 三季度以来GC001变动情况 (网上申购缴款日为T) [cite: 611]</h3>
+        <img src="图2-GC001变动.png" alt="图2: GC001变动情况">
+        <p><strong>注意：</strong> 请将原报告中的图 2 截图，并保存为 **图2-GC001变动.png** 放置在当前文件夹中。</p>
+    </div>
+    <div class="image-container">
+        <h3>图3: 三季度以来GC007变动情况 (网上申购缴款日为T) [cite: 638]</h3>
+        <img src="图3-GC007变动.png" alt="图3: GC007变动情况">
+        <p><strong>注意：</strong> 请将原报告中的图 3 截图，并保存为 **图3-GC007变动.png** 放置在当前文件夹中。</p>
+    </div>
+    <div class="image-container">
+        <h3>图4: 银行间资金利率价格波动振幅偏小，且相关性不明显 [cite: 663]</h3>
+        <img src="图4-银行间利率.png" alt="图4: 银行间资金利率价格波动振幅">
+        <p><strong>注意：</strong> 请将原报告中的图 4 截图，并保存为 **图4-银行间利率.png** 放置在当前文件夹中。</p>
+    </div>
+
+    <h2>三、北交所打新收益分析 [cite: 677]</h2>
+    <p>当前中签率呈持续下降趋势，使得整体打新策略的收益水平逐渐趋向理性 [cite: 679, 680]。以长江能科 (920158.BJ) 为例，网上发行冻结资金高达7279亿元，中签率为0.0209% [cite: 681]。假设投资者以100万元资金参与申购，单笔申购的绝对收益约为495元，折算绝对收益率约为0.05%，年化收益率为9.03% [cite: 682, 683]。</p>
+    <p>北交所新股打新正在进入收益回归理性、竞争趋于饱和的阶段 [cite: 684]。收益的持续性更多取决于两方面：一是资金的实际占用效率 [cite: 685]，二是上市公司质地与行业预期等基本面因素 [cite: 686]。</p>
+
+    <h3>等效资金占用量计算公式 [cite: 687]</h3>
+    <div class="formula">
+        $$ \text{等效资金占用量} = \text{申购资金} \times [(1-\text{中签率}) \times \text{冻结天数} + \text{中签率} \times \text{冻结天数}_{2}] + \text{持有天数} $$
+    </div>
+    <div class="formula">
+        $$ \text{等效资金占用年化收益率} = (\frac{\text{收益}}{\text{等效资金占用量}}) \times (\frac{365}{\text{持有天数}}) $$
+    </div>
+
+    <h3>表2: 2024年10月以来北交所打新首日卖出收益 [cite: 688]</h3>
+    <p>（表格内容较长，这里仅展示部分行，完整表格已在您原文件中）</p>
+    <table>
+        <thead>
+            <tr>
+                <th>名称</th>
+                <th>上市日期</th>
+                <th>绝对收益率</th>
+                <th>等效资金占用年化收益率</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>铜冠矿建</td><td>2024-10-11</td><td>0.91%</td><td>164.21%</td></tr>
+            <tr><td>长江能科</td><td>2025-10-16</td><td>0.05%</td><td>9.03%</td></tr>
+            </tbody>
+    </table>
+
+    <h2>四、合理的回购错期融资方式 [cite: 694]</h2>
+    <p>融资侧的核心在于**“是否需要跨越缴款窗口”** [cite: 695]。以GC001连续滚动覆盖冻结期作为基准方案，其优势是灵活、贴近短端真实价格 [cite: 695]。但在T日至T+1的脉冲期，滚动方案暴露在最昂贵的隔夜上升段 [cite: 695]。</p>
+    <p>在**不覆盖缴款日**时，GC001滚动融资更便宜 [cite: 697]。然而当**覆盖缴款期**时，**GC002**的加权节约率转负，说明以GC002“一次性跨期”能显著压低综合成本 [cite: 698]。</p>
+    <p>因此，优化策略为：**窗口内优先GC002跨期、窗口外回归GC001滚动** [cite: 699]。</p>
+    <ul>
+        <li>**窗口内：** 在T-1至T+2的关键区间提前锁定GC002额度，利用其在窗口期的相对定价优势平抑脉冲 [cite: 699]。</li>
+        <li>**窗口外：** 回到GC001以恢复灵活度并减少久期暴露 [cite: 699]。</li>
+    </ul>
+
+    <h3>表3: GC001与其他回购在是否覆盖缴款日时的融资成本对比 [cite: 702]</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>回购品种</th>
+                <th>未覆盖缴款日加权节约率</th>
+                <th>覆盖缴款日加权节约率</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>GC002</td><td>+2.09%</td><td>-1.81%</td></tr>
+            <tr><td>GC003</td><td>+3.13%</td><td>+1.84%</td></tr>
+            <tr><td>GC004</td><td>+3.54%</td><td>+3.88%</td></tr>
+            <tr><td>GC007</td><td>+5.88%</td><td>+5.92%</td></tr>
+        </tbody>
+    </table>
+    <p class="metadata">注: 为正数则说明 GC001滚动融资更便宜 [cite: 704]</p>
+    
+    <hr>
+    
+    <footer>
+        <p class="metadata">数据来源: Wind, 招银理财 [cite: 570, 599, 658, 674, 690, 705]</p>
+    </footer>
+
+</body>
+</html>
